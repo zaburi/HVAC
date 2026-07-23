@@ -1,4 +1,7 @@
-import { performOperation } from "../../../../../../lib/database";
+import {
+  applyDemoOperation,
+  createDemoSnapshot,
+} from "../../../../../../lib/demo-data";
 import { apiErrorResponse } from "../../../../../../lib/api-response";
 
 export async function POST(
@@ -8,10 +11,11 @@ export async function POST(
   try {
     const { id } = await context.params;
     const payload = (await request.json()) as Record<string, unknown>;
-    const result = await performOperation(
-      { ...payload, action: "updateJobStatus", jobId: id },
-      request.headers.get("Idempotency-Key"),
-    );
+    const { result } = applyDemoOperation(createDemoSnapshot(), {
+      ...payload,
+      action: "updateJobStatus",
+      jobId: id,
+    });
     return Response.json(result);
   } catch (error) {
     return apiErrorResponse(error);

@@ -1,14 +1,14 @@
 import {
-  getOperationsSnapshot,
-  performOperation,
-} from "../../../../../lib/database";
+  applyDemoOperation,
+  createDemoSnapshot,
+} from "../../../../../lib/demo-data";
 import { apiErrorResponse } from "../../../../../lib/api-response";
 
 export const dynamic = "force-dynamic";
 
 export async function GET() {
   try {
-    const snapshot = await getOperationsSnapshot();
+    const snapshot = createDemoSnapshot();
     return Response.json({
       data: snapshot.items,
       meta: { count: snapshot.items.length, generatedAt: snapshot.generatedAt },
@@ -21,10 +21,10 @@ export async function GET() {
 export async function POST(request: Request) {
   try {
     const payload = (await request.json()) as Record<string, unknown>;
-    const result = await performOperation(
-      { ...payload, action: "createItem" },
-      request.headers.get("Idempotency-Key"),
-    );
+    const { result } = applyDemoOperation(createDemoSnapshot(), {
+      ...payload,
+      action: "createItem",
+    });
     return Response.json(result, { status: 201 });
   } catch (error) {
     return apiErrorResponse(error);

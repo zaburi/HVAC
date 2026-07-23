@@ -58,6 +58,11 @@ import {
   useRef,
   useState,
 } from "react";
+import {
+  applyDemoOperation,
+  createDemoSnapshot,
+  type DemoSnapshot,
+} from "../lib/demo-data";
 
 type Viewer = { name: string; email: string; role: string };
 type ModuleKey =
@@ -71,110 +76,12 @@ type ModuleKey =
   | "audit";
 type ModalKind = "job" | "item" | "receipt" | "issue" | "complete" | null;
 
-type Branch = {
-  id: string;
-  name: string;
-  code: string;
-};
-type WarehouseRow = {
-  id: string;
-  name: string;
-  branch_id: string;
-};
-type Item = {
-  id: string;
-  code: string;
-  name: string;
-  category: string;
-  brand: string;
-  supplier: string;
-  unit: string;
-  minimum_stock: number;
-  reorder_quantity: number;
-  standard_cost: number;
-  quantity: number;
-  average_cost: number;
-  value: number;
-  health: "HEALTHY" | "LOW" | "CRITICAL";
-  warehouse_name: string;
-};
-type Job = {
-  id: string;
-  code: string;
-  customer: string;
-  site: string;
-  type: string;
-  priority: string;
-  status: string;
-  description: string;
-  logged_at: string;
-  target_at: string;
-  completed_at: string | null;
-  resolution: string | null;
-  parts_cost: number;
-  technician_id: string;
-  technician_name: string;
-  branch_id: string;
-  branch_name: string;
-};
-type Technician = {
-  id: string;
-  code: string;
-  name: string;
-  phone: string;
-  position: string;
-  primary_skill: string;
-  employment_status: string;
-  branch_id: string;
-  branch_name: string;
-  assigned: number;
-  completed: number;
-  pending: number;
-  on_time: number;
-  score: number;
-};
-type Movement = {
-  id: string;
-  code: string;
-  movement_type: string;
-  quantity_delta: number;
-  unit_cost: number;
-  total_cost: number;
-  reference: string;
-  actor: string;
-  created_at: string;
-  item_name: string;
-  item_code: string;
-  job_id: string | null;
-  technician_name: string | null;
-};
-type AuditRow = {
-  id: string;
-  action: string;
-  entity_type: string;
-  entity_id: string;
-  actor: string;
-  after_json: string | null;
-  created_at: string;
-};
-type Snapshot = {
-  generatedAt: string;
-  organization: {
-    id: string;
-    name: string;
-    currency: string;
-    timezone: string;
-    target_turnaround_days: number;
-    critical_factor: number;
-  };
-  branches: Branch[];
-  warehouses: WarehouseRow[];
-  items: Item[];
-  jobs: Job[];
-  technicians: Technician[];
-  movements: Movement[];
-  audits: AuditRow[];
-};
+type Snapshot = DemoSnapshot;
+type Item = Snapshot["items"][number];
+type Job = Snapshot["jobs"][number];
+type Technician = Snapshot["technicians"][number];
+type Movement = Snapshot["movements"][number];
+type AuditRow = Snapshot["audits"][number];
 
 const navItems: { key: ModuleKey; label: string; icon: LucideIcon }[] = [
   { key: "overview", label: "Overview", icon: LayoutDashboard },
@@ -316,10 +223,10 @@ export default function CoolOpsApp({
   viewer: Viewer;
 }) {
   const [activeModule, setActiveModule] = useState<ModuleKey>("overview");
-  const [snapshot, setSnapshot] = useState<Snapshot | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [snapshot, setSnapshot] = useState<Snapshot>(
+    () => createDemoSnapshot() as Snapshot,
+  );
   const [refreshing, setRefreshing] = useState(false);
-  const [error, setError] = useState("");
   const [branch, setBranch] = useState("all");
   const [search, setSearch] = useState("");
   const [jobFilter, setJobFilter] = useState("all");
@@ -338,41 +245,10 @@ export default function CoolOpsApp({
 
   const loadSnapshot = useCallback(async (quiet = false) => {
     if (quiet) setRefreshing(true);
-    else setLoading(true);
-    try {
-      const response = await fetch("/api/v1/operations", {
-        cache: "no-store",
-      });
-      const payload = (await response.json()) as
-        | Snapshot
-        | { error?: { message?: string } };
-      if (!response.ok) {
-        throw new Error(
-          "error" in payload
-            ? payload.error?.message ?? "Could not load operations."
-            : "Could not load operations.",
-        );
-      }
-      setSnapshot(payload as Snapshot);
-      setError("");
-    } catch (caught) {
-      setError(
-        caught instanceof Error
-          ? caught.message
-          : "Could not load the operations workspace.",
-      );
-    } finally {
-      setLoading(false);
-      setRefreshing(false);
-    }
+    await new Promise((resolve) => window.setTimeout(resolve, 250));
+    setSnapshot(createDemoSnapshot() as Snapshot);
+    setRefreshing(false);
   }, []);
-
-  useEffect(() => {
-    const frame = window.requestAnimationFrame(() => {
-      void loadSnapshot();
-    });
-    return () => window.cancelAnimationFrame(frame);
-  }, [loadSnapshot]);
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
@@ -441,23 +317,13 @@ export default function CoolOpsApp({
   async function runOperation(payload: Record<string, unknown>) {
     setSubmitting(true);
     try {
-      const response = await fetch("/api/v1/operations", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Idempotency-Key": crypto.randomUUID(),
-        },
-        body: JSON.stringify({ ...payload, actor: viewer.name }),
+      const { snapshot: nextSnapshot, result } = applyDemoOperation(snapshot, {
+        ...payload,
+        actor: `${viewer.name} · Demo`,
       });
-      const result = (await response.json()) as Record<string, unknown> & {
-        error?: { message?: string };
-      };
-      if (!response.ok) {
-        throw new Error(result.error?.message ?? "The action could not be saved.");
-      }
+      setSnapshot(nextSnapshot as Snapshot);
       setModal(null);
       setSelectedJob(null);
-      await loadSnapshot(true);
       notify(operationSuccess(payload.action as string, result));
       return true;
     } catch (caught) {
@@ -482,8 +348,6 @@ export default function CoolOpsApp({
     else setModal("job");
   };
 
-  if (loading) return <WorkspaceLoading />;
-
   return (
     <div className="app-shell">
       <Sidebar
@@ -505,6 +369,16 @@ export default function CoolOpsApp({
             0
           }
         />
+
+        <div className="demo-banner" role="note">
+          <Sparkles size={15} />
+          <strong>Demo mode</strong>
+          <span>
+            All names, contacts and operations are fictional. Changes stay in
+            this browser session and reset when the demo is refreshed.
+          </span>
+          <button onClick={() => void loadSnapshot(true)}>Reset demo data</button>
+        </div>
 
         {notificationsOpen && snapshot && (
           <NotificationsPanel
@@ -535,14 +409,6 @@ export default function CoolOpsApp({
             onRefresh={() => void loadSnapshot(true)}
             onPrimary={primaryAction}
           />
-
-          {error && (
-            <div className="error-banner" role="alert">
-              <AlertCircle size={17} />
-              <span>{error}</span>
-              <button onClick={() => void loadSnapshot()}>Retry</button>
-            </div>
-          )}
 
           {snapshot && activeModule === "overview" && (
             <Overview
@@ -702,21 +568,6 @@ function operationSuccess(action: string, result: Record<string, unknown>) {
   if (action === "postIssue") return `${result.code ?? "Issue"} posted to the stock ledger`;
   if (action === "updateJobStatus") return `Job moved to ${friendlyStatus(String(result.toStatus))}`;
   return "Changes saved";
-}
-
-function WorkspaceLoading() {
-  return (
-    <div className="workspace-loading" role="status">
-      <div className="brand-mark large">
-        <Gauge size={22} />
-      </div>
-      <div>
-        <strong>Opening CoolOps</strong>
-        <span>Reconciling jobs, inventory and field teams…</span>
-      </div>
-      <LoaderCircle className="spin" size={20} />
-    </div>
-  );
 }
 
 function Sidebar({

@@ -1,4 +1,4 @@
-import { getOperationsSnapshot } from "../../../../../lib/database";
+import { createDemoSnapshot } from "../../../../../lib/demo-data";
 import { apiErrorResponse } from "../../../../../lib/api-response";
 
 export const dynamic = "force-dynamic";
@@ -6,7 +6,7 @@ export const dynamic = "force-dynamic";
 export async function POST(request: Request) {
   try {
     const filters = (await request.json()) as Record<string, unknown>;
-    const snapshot = await getOperationsSnapshot();
+    const snapshot = createDemoSnapshot();
     const jobs = snapshot.jobs.filter(
       (job) =>
         !filters.branchId || job.branch_id === String(filters.branchId),

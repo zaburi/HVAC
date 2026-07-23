@@ -1,15 +1,11 @@
-import { getChatGPTUser } from "./chatgpt-auth";
 import CoolOpsApp from "./coolops-app";
 
-export const dynamic = "force-dynamic";
-
-export default async function Home() {
-  const user = await getChatGPTUser();
+export default function Home() {
   return (
     <CoolOpsApp
       viewer={{
-        name: user?.displayName ?? "Asha Mwita",
-        email: user?.email ?? "operations@kiboclimate.co.tz",
+        name: "Asha Mwita",
+        email: "demo@coolops.example",
         role: "Operations Manager",
       }}
     />

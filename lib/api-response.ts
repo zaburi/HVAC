@@ -1,7 +1,7 @@
-import { ValidationError } from "./database";
+import { DemoValidationError } from "./demo-data";
 
 export function apiErrorResponse(error: unknown) {
-  if (error instanceof ValidationError) {
+  if (error instanceof DemoValidationError) {
     return Response.json(
       {
         error: {

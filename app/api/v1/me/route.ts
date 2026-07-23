@@ -1,19 +1,16 @@
-import { getChatGPTUser } from "../../../chatgpt-auth";
-import { getOperationsSnapshot } from "../../../../lib/database";
+import { createDemoSnapshot } from "../../../../lib/demo-data";
 import { apiErrorResponse } from "../../../../lib/api-response";
 
 export const dynamic = "force-dynamic";
 
 export async function GET() {
   try {
-    const [user, snapshot] = await Promise.all([
-      getChatGPTUser(),
-      getOperationsSnapshot(),
-    ]);
+    const snapshot = createDemoSnapshot();
     return Response.json({
       user: {
-        displayName: user?.displayName ?? "Asha Mwita",
-        email: user?.email ?? "operations@kiboclimate.co.tz",
+        displayName: "Asha Mwita",
+        email: "demo@coolops.example",
+        demo: true,
       },
       organizations: [
         {

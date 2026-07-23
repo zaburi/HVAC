@@ -1,9 +1,3 @@
-import {
-  ensureDatabase,
-  getRuntimeDatabase,
-  getRuntimeFiles,
-} from "../../../../lib/database";
-
 const MAX_FILE_SIZE = 10 * 1024 * 1024;
 const ALLOWED_TYPES = new Set([
   "image/jpeg",
@@ -31,32 +25,20 @@ export async function POST(request: Request) {
       );
     }
 
-    const id = `att_${crypto.randomUUID()}`;
-    const objectKey = `coolops/${entityType}/${entityId}/${id}-${file.name.replace(/[^a-zA-Z0-9._-]/g, "_")}`;
-    await getRuntimeFiles().put(objectKey, file.stream(), {
-      httpMetadata: { contentType: file.type },
-      customMetadata: { entityType, entityId, uploadedBy: "Asha Mwita" },
-    });
-    const database = getRuntimeDatabase();
-    await ensureDatabase(database);
-    await database
-      .prepare(
-        `INSERT INTO attachments VALUES (?, 'org_coolops', ?, ?, ?, ?, ?, ?, 'Asha Mwita', ?)`,
-      )
-      .bind(
-        id,
-        entityType,
-        entityId,
-        objectKey,
-        file.name,
-        file.type,
-        file.size,
-        new Date().toISOString(),
-      )
-      .run();
-
     return Response.json(
-      { attachment: { id, filename: file.name, contentType: file.type, size: file.size } },
+      {
+        attachment: {
+          id: `demo_att_${crypto.randomUUID()}`,
+          entityType,
+          entityId,
+          filename: file.name,
+          contentType: file.type,
+          size: file.size,
+          demo: true,
+          retained: false,
+        },
+        message: "Demo preview only. The selected file was not uploaded or retained.",
+      },
       { status: 201 },
     );
   } catch (error) {

@@ -1,21 +1,21 @@
-# CoolOps
+# CoolOps HVAC Operations Demo
 
-CoolOps is the implementation of the HVAC Operations Management System specification. It brings jobs, inventory, stock control, technicians, reporting, configuration, audit history and field-friendly workflows into one responsive operations workspace.
+CoolOps is a responsive demonstration of the HVAC Operations Management System described in the implementation specification. It brings jobs, inventory, stock control, technicians, reporting, settings and audit history into one operations workspace.
 
-## What is implemented
+> **Demo only:** every customer, supplier, contact, technician and transaction is fictional. Changes stay in the current browser session and reset when the page is refreshed or the demo is reset. Do not enter real or confidential information.
 
-- Dashboard KPIs, trend/status charts, exception queues and drill-downs
-- Jobs list, filtering, assignment, validated status changes, completion and activity
-- Inventory health, valuation, weighted-average costing, thresholds and item history
-- Immutable stock receipts and issues with idempotency and negative-stock protection
-- Technician workload, on-time performance and transparent weighted scoring
-- Branch reporting, inventory/report exports and data-health summaries
-- Organization, inventory, workflow, scoring and identifier settings
-- Audit attribution for master-data, posting and lifecycle actions
-- D1-backed durable operational records and R2-backed attachments
-- Workspace-authenticated identity display, responsive technician use and keyboard command palette
+## Included in the demo
 
-The sample workspace is Kibo Climate Services with realistic Tanzanian branches, TZS currency, technicians, jobs and inventory. It seeds once and then persists changes.
+- Operations dashboard with KPIs, trends, exceptions and drill-downs
+- Job creation, assignment and validated lifecycle changes
+- Inventory health, valuation and weighted-average costing
+- Stock receipts and issues with negative-stock protection
+- Technician workload and transparent performance scoring
+- Branch reports, CSV export, settings and audit history
+- Responsive layouts for desktop and field use
+- Versioned demo API routes for exploring the product contract
+
+The sample organization is **Kibo Climate Services · Demo** and uses fictional Tanzanian branches, contacts and operating records.
 
 ## Run locally
 
@@ -26,7 +26,18 @@ npm install
 npm run dev
 ```
 
-Open the local address printed by the development server.
+Open the address printed by Next.js.
+
+## Deploy to Vercel
+
+The repository is a standard Next.js app with no required environment variables or external services.
+
+1. Import `zaburi/HVAC` in Vercel.
+2. Keep the detected framework as **Next.js**.
+3. Keep the default build and output settings.
+4. Deploy.
+
+[Deploy with Vercel](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fzaburi%2FHVAC)
 
 ## Quality checks
 
@@ -36,20 +47,13 @@ npx tsc --noEmit --incremental false
 npm test
 ```
 
-The test suite covers weighted-average cost, inventory health boundaries, technician scoring, allowed job transitions, identifier generation and server-rendered product metadata.
+The checks cover domain rules, demo-state behavior, the production build and the visible demo disclosure.
 
-## Data and deployment
+## Architecture
 
-- `.openai/hosting.json` declares the `DB` D1 database and `FILES` R2 bucket.
-- `db/schema.ts` contains the relational schema.
-- `drizzle/0000_military_unicorn.sql` is the generated migration.
-- `lib/database.ts` owns runtime initialization, seeded sample data, queries and transactional operations.
-- `lib/operations.ts` owns reusable business rules.
-- `app/api/v1/operations` exposes the versioned operational API used by the workspace.
-- `app/api/v1/attachments` stores validated JPG, PNG, WebP and PDF files up to 10 MB.
+- `app/coolops-app.tsx` contains the interactive product workspace.
+- `lib/demo-data.ts` creates and updates resettable fictional data.
+- `lib/operations.ts` contains reusable HVAC business rules.
+- `app/api/v1` provides non-persistent demo API responses.
 
-All records are organization scoped. Posted movements are appended to the ledger, and retryable posts use an `Idempotency-Key`.
-
-## Current implementation boundary
-
-This repository is a complete runnable product slice on OpenAI Sites using Next.js/Vinext, D1 and R2. The source specification’s larger-enterprise deployment choices (NestJS, PostgreSQL, Redis/BullMQ, Supabase Auth and provider email) remain the scale-out target; the domain boundaries and API payloads are kept portable so those services can be introduced without changing the product workflows.
+Production authentication, durable storage, object storage, notification delivery and background jobs are intentionally not included in this public demo.
