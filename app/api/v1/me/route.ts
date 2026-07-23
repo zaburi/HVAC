@@ -9,7 +9,7 @@ export async function GET() {
     return Response.json({
       user: {
         displayName: "Asha Mwita",
-        email: "demo@coolops.example",
+        email: "demo@hvac.example",
         demo: true,
       },
       organizations: [

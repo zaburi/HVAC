@@ -1,4 +1,4 @@
-# CoolOps demo implementation coverage
+# HVAC demo implementation coverage
 
 This checklist maps the HVAC technical specification to the public Vercel demo.
 

@@ -217,7 +217,7 @@ function downloadCsv(filename: string, rows: Record<string, unknown>[]) {
   URL.revokeObjectURL(url);
 }
 
-export default function CoolOpsApp({
+export default function HVACApp({
   viewer,
 }: {
   viewer: Viewer;
@@ -592,7 +592,7 @@ function Sidebar({
             <Gauge size={17} />
           </div>
           <div>
-            <strong>CoolOps</strong>
+            <strong>HVAC</strong>
             <span>HVAC operations</span>
           </div>
           <button className="icon-button sidebar-close" onClick={onClose} aria-label="Close navigation">
@@ -1185,7 +1185,7 @@ function JobsView({
           title="Export jobs"
           onClick={() =>
             downloadCsv(
-              "coolops-jobs.csv",
+              "hvac-jobs.csv",
               jobs.map((job) => ({
                 code: job.code,
                 customer: job.customer,
@@ -1336,7 +1336,7 @@ function InventoryView({
             className="button icon-only"
             onClick={() =>
               downloadCsv(
-                "coolops-inventory.csv",
+                "hvac-inventory.csv",
                 items.map((item) => ({
                   code: item.code,
                   item: item.name,
@@ -1748,7 +1748,7 @@ function ReportsView({
                 </button>
                 <button
                   onClick={() => {
-                    downloadCsv("coolops-report.csv", branchStats);
+                    downloadCsv("hvac-report.csv", branchStats);
                     notify("CSV export generated with active filters");
                   }}
                 >

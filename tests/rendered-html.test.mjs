@@ -17,10 +17,10 @@ async function readBuildOutput(directory) {
   return parts.join("\n");
 }
 
-test("production build contains CoolOps and the demo disclosure", async () => {
+test("production build contains HVAC and the demo disclosure", async () => {
   const [serverBuild, clientSource, layoutSource] = await Promise.all([
     readBuildOutput(new URL("../.next/server/", import.meta.url)),
-    readFile(new URL("../app/coolops-app.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/hvac-app.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
   ]);
 
@@ -28,7 +28,7 @@ test("production build contains CoolOps and the demo disclosure", async () => {
   assert.match(clientSource, /Demo mode/);
   assert.match(clientSource, /All names, contacts and operations are fictional/);
   assert.match(layoutSource, /index:\s*false/);
-  assert.doesNotMatch(serverBuild, /Opening CoolOps/);
+  assert.doesNotMatch(serverBuild, /Opening HVAC/);
   assert.doesNotMatch(serverBuild, /codex-preview|Your site is taking shape/i);
 });
 
@@ -39,7 +39,7 @@ test("repository contains only the Vercel demo runtime", async () => {
     readFile(new URL("../app/api/v1/attachments/route.ts", import.meta.url), "utf8"),
   ]);
 
-  assert.match(page, /CoolOpsApp/);
+  assert.match(page, /HVACApp/);
   assert.match(packageJson, /"build": "next build"/);
   assert.doesNotMatch(packageJson, /vinext|wrangler|drizzle|cloudflare/i);
   assert.match(attachmentRoute, /not uploaded or retained/);

@@ -1,11 +1,11 @@
-import CoolOpsApp from "./coolops-app";
+import HVACApp from "./hvac-app";
 
 export default function Home() {
   return (
-    <CoolOpsApp
+    <HVACApp
       viewer={{
         name: "Asha Mwita",
-        email: "demo@coolops.example",
+        email: "demo@hvac.example",
         role: "Operations Manager",
       }}
     />

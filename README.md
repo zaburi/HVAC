@@ -1,6 +1,6 @@
-# CoolOps HVAC Operations Demo
+# HVAC Operations Demo
 
-CoolOps is a responsive demonstration of the HVAC Operations Management System described in the implementation specification. It brings jobs, inventory, stock control, technicians, reporting, settings and audit history into one operations workspace.
+HVAC is a responsive demonstration of the operations management system described in the implementation specification. It brings jobs, inventory, stock control, technicians, reporting, settings and audit history into one operations workspace.
 
 > **Demo only:** every customer, supplier, contact, technician and transaction is fictional. Changes stay in the current browser session and reset when the page is refreshed or the demo is reset. Do not enter real or confidential information.
 
@@ -51,7 +51,7 @@ The checks cover domain rules, demo-state behavior, the production build and the
 
 ## Architecture
 
-- `app/coolops-app.tsx` contains the interactive product workspace.
+- `app/hvac-app.tsx` contains the interactive product workspace.
 - `lib/demo-data.ts` creates and updates resettable fictional data.
 - `lib/operations.ts` contains reusable HVAC business rules.
 - `app/api/v1` provides non-persistent demo API responses.

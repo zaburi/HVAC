@@ -6,7 +6,7 @@ const vercelHost =
 const metadataBase = new URL(
   vercelHost ? `https://${vercelHost}` : "http://localhost:3000",
 );
-const title = "CoolOps — HVAC Operations Command Centre";
+const title = "HVAC — Operations Command Centre";
 const description =
   "Explore a demo HVAC operations workspace for inventory, jobs, technicians and branch performance.";
 
@@ -14,10 +14,10 @@ export const metadata: Metadata = {
   metadataBase,
   title: {
     default: title,
-    template: "%s · CoolOps",
+    template: "%s · HVAC",
   },
   description,
-  applicationName: "CoolOps Demo",
+  applicationName: "HVAC Demo",
   robots: {
     index: false,
     follow: false,
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1743,
         height: 909,
-        alt: "CoolOps HVAC operations command centre demo",
+        alt: "HVAC operations command centre demo",
       },
     ],
   },
