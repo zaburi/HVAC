@@ -17,16 +17,19 @@ async function readBuildOutput(directory) {
   return parts.join("\n");
 }
 
-test("production build contains HVAC and the demo disclosure", async () => {
-  const [serverBuild, clientSource, layoutSource] = await Promise.all([
+test("production build contains HVAC, demo disclosure and theme controls", async () => {
+  const [serverBuild, clientSource, layoutSource, stylesheet] = await Promise.all([
     readBuildOutput(new URL("../.next/server/", import.meta.url)),
     readFile(new URL("../app/hvac-app.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
   ]);
 
   assert.match(serverBuild, /HVAC Operations Command Centre/i);
   assert.match(clientSource, /Demo mode/);
   assert.match(clientSource, /All names, contacts and operations are fictional/);
+  assert.match(clientSource, /Switch to.*light.*mode/);
+  assert.match(stylesheet, /html\[data-theme="light"\]/);
   assert.match(layoutSource, /index:\s*false/);
   assert.doesNotMatch(serverBuild, /Opening HVAC/);
   assert.doesNotMatch(serverBuild, /codex-preview|Your site is taking shape/i);
