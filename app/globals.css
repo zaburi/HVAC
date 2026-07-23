@@ -42,7 +42,7 @@ body {
   background: var(--app);
   color: var(--text);
   font-family: var(--font-geist-sans), Inter, ui-sans-serif, system-ui, sans-serif;
-  font-size: 19.5px;
+  font-size: 16.9px;
   line-height: 1.45;
   min-width: 320px;
 }
@@ -155,7 +155,7 @@ button:disabled {
 }
 
 .brand strong {
-  font-size: 21px;
+  font-size: 18.2px;
   letter-spacing: -0.01em;
 }
 
@@ -163,7 +163,7 @@ button:disabled {
 .sidebar-profile span,
 .workspace-switch small {
   color: var(--muted);
-  font-size: 15.75px;
+  font-size: 13.65px;
 }
 
 .sidebar-close {
@@ -193,7 +193,7 @@ button:disabled {
 }
 
 .workspace-switch span {
-  font-size: 17.25px;
+  font-size: 14.95px;
   font-weight: 600;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -207,7 +207,7 @@ button:disabled {
   border-radius: 6px;
   color: var(--text-2);
   display: flex;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 700;
   height: 28px;
   justify-content: center;
@@ -223,7 +223,7 @@ button:disabled {
 
 .nav-label {
   color: var(--faint);
-  font-size: 14.25px;
+  font-size: 12.35px;
   font-weight: 650;
   letter-spacing: 0.075em;
   padding: 0 9px 6px;
@@ -237,7 +237,7 @@ button:disabled {
   border-radius: 6px;
   color: var(--muted);
   display: flex;
-  font-size: 17.25px;
+  font-size: 14.95px;
   gap: 10px;
   min-height: 32px;
   padding: 0 9px;
@@ -264,7 +264,7 @@ button:disabled {
   background: #23262d;
   border-radius: 4px;
   color: var(--muted);
-  font-size: 14.25px;
+  font-size: 12.35px;
   font-style: normal;
   font-variant-numeric: tabular-nums;
   min-width: 20px;
@@ -308,7 +308,7 @@ button:disabled {
 }
 
 .sidebar-profile strong {
-  font-size: 16.5px;
+  font-size: 14.3px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -361,7 +361,7 @@ button:disabled {
 
 .command-trigger span {
   flex: 1;
-  font-size: 16.5px;
+  font-size: 14.3px;
 }
 
 kbd {
@@ -370,7 +370,7 @@ kbd {
   border-radius: 4px;
   color: var(--muted);
   font-family: var(--font-geist-sans), sans-serif;
-  font-size: 14.25px;
+  font-size: 12.35px;
   line-height: 18px;
   min-width: 20px;
   padding: 0 5px;
@@ -416,7 +416,7 @@ kbd {
   border-radius: 10px;
   color: #1b0c0e;
   display: flex;
-  font-size: 12px;
+  font-size: 10.4px;
   font-weight: 800;
   height: 15px;
   justify-content: center;
@@ -470,20 +470,20 @@ kbd {
 
 .demo-banner strong {
   color: #d9dbff;
-  font-size: 15px;
+  font-size: 13px;
   white-space: nowrap;
 }
 
 .demo-banner span {
   color: #9196cf;
-  font-size: 13.5px;
+  font-size: 11.7px;
 }
 
 .demo-banner button {
   background: transparent;
   border: 0;
   color: #c7caff;
-  font-size: 13.5px;
+  font-size: 11.7px;
   font-weight: 600;
   margin-left: auto;
   padding: 0;
@@ -497,7 +497,7 @@ kbd {
 }
 
 .page-header h1 {
-  font-size: 31.5px;
+  font-size: 27.3px;
   font-weight: 650;
   letter-spacing: -0.025em;
   line-height: 1.2;
@@ -506,13 +506,13 @@ kbd {
 
 .page-header p {
   color: var(--muted);
-  font-size: 17.25px;
+  font-size: 14.95px;
   margin: 0;
 }
 
 .eyebrow {
   color: var(--faint);
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 550;
 }
 
@@ -527,7 +527,7 @@ kbd {
   border: 1px solid transparent;
   border-radius: 6px;
   display: inline-flex;
-  font-size: 16.5px;
+  font-size: 14.3px;
   font-weight: 560;
   gap: 7px;
   height: 32px;
@@ -583,7 +583,7 @@ kbd {
   border-radius: 6px;
   color: var(--text-2);
   display: inline-flex;
-  font-size: 15.75px;
+  font-size: 13.65px;
   gap: 6px;
   height: 28px;
   padding: 0 8px;
@@ -611,7 +611,7 @@ kbd {
   align-items: center;
   color: var(--faint);
   display: flex;
-  font-size: 15px;
+  font-size: 13px;
   gap: 6px;
   margin-left: auto;
 }
@@ -689,7 +689,7 @@ kbd {
   align-items: center;
   color: var(--muted);
   display: flex;
-  font-size: 15.75px;
+  font-size: 13.65px;
   justify-content: space-between;
 }
 
@@ -699,7 +699,7 @@ kbd {
 
 .metric-card > strong {
   display: block;
-  font-size: 37.5px;
+  font-size: 32.5px;
   font-variant-numeric: tabular-nums;
   letter-spacing: -0.035em;
   line-height: 1;
@@ -710,7 +710,7 @@ kbd {
   align-items: center;
   color: var(--muted);
   display: flex;
-  font-size: 15px;
+  font-size: 13px;
   gap: 8px;
 }
 
@@ -757,7 +757,7 @@ kbd {
 }
 
 .card-header h2 {
-  font-size: 18.75px;
+  font-size: 16.25px;
   font-weight: 600;
   letter-spacing: -0.01em;
   margin: 0 0 3px;
@@ -765,7 +765,7 @@ kbd {
 
 .card-header p {
   color: var(--muted);
-  font-size: 15px;
+  font-size: 13px;
   margin: 0;
 }
 
@@ -775,7 +775,7 @@ kbd {
   border: 0;
   color: var(--muted);
   display: flex;
-  font-size: 15px;
+  font-size: 13px;
   gap: 3px;
   padding: 2px 0;
 }
@@ -796,7 +796,7 @@ kbd {
 }
 
 .trend-summary > strong {
-  font-size: 36px;
+  font-size: 31.2px;
   letter-spacing: -0.035em;
 }
 
@@ -812,7 +812,7 @@ kbd {
 .trend-summary span {
   align-items: center;
   display: flex;
-  font-size: 14.25px;
+  font-size: 12.35px;
   gap: 3px;
 }
 
@@ -868,7 +868,7 @@ kbd {
 .chart-axis {
   color: var(--faint);
   display: flex;
-  font-size: 12.75px;
+  font-size: 11.05px;
   justify-content: space-between;
   padding-top: 7px;
 }
@@ -885,7 +885,7 @@ kbd {
   background: transparent;
   border: 0;
   display: grid;
-  font-size: 15px;
+  font-size: 13px;
   gap: 10px;
   grid-template-columns: 76px 1fr 20px;
   padding: 0;
@@ -897,7 +897,7 @@ kbd {
 }
 
 .status-bar-row > strong {
-  font-size: 15px;
+  font-size: 13px;
   font-variant-numeric: tabular-nums;
   text-align: right;
 }
@@ -950,12 +950,12 @@ kbd {
 }
 
 .chart-callout strong {
-  font-size: 15.75px;
+  font-size: 13.65px;
 }
 
 .chart-callout span {
   color: #c59197;
-  font-size: 13.5px;
+  font-size: 11.7px;
 }
 
 .table-card {
@@ -1012,7 +1012,7 @@ kbd {
 }
 
 .row-main strong {
-  font-size: 15.75px;
+  font-size: 13.65px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -1020,7 +1020,7 @@ kbd {
 
 .row-main span {
   color: var(--muted);
-  font-size: 13.5px;
+  font-size: 11.7px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -1028,7 +1028,7 @@ kbd {
 
 .due-label {
   color: var(--muted);
-  font-size: 13.5px;
+  font-size: 11.7px;
   min-width: 76px;
   text-align: right;
 }
@@ -1058,12 +1058,12 @@ kbd {
 }
 
 .stock-quantity strong {
-  font-size: 16.5px;
+  font-size: 14.3px;
 }
 
 .stock-quantity span {
   color: var(--muted);
-  font-size: 12.75px;
+  font-size: 11.05px;
 }
 
 .leaderboard-grid {
@@ -1091,7 +1091,7 @@ kbd {
 .rank {
   color: var(--faint);
   font-family: var(--font-geist-mono), monospace;
-  font-size: 13.5px;
+  font-size: 11.7px;
 }
 
 .leader-info {
@@ -1102,7 +1102,7 @@ kbd {
 }
 
 .leader-info strong {
-  font-size: 15px;
+  font-size: 13px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -1110,7 +1110,7 @@ kbd {
 
 .leader-info span {
   color: var(--muted);
-  font-size: 12.75px;
+  font-size: 11.05px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -1132,7 +1132,7 @@ kbd {
 
 .score-ring span {
   color: var(--text);
-  font-size: 12.75px;
+  font-size: 11.05px;
   font-weight: 650;
   font-variant-numeric: tabular-nums;
 }
@@ -1146,7 +1146,7 @@ kbd {
 }
 
 .score-ring.large span {
-  font-size: 24px;
+  font-size: 20.8px;
 }
 
 .avatar {
@@ -1157,7 +1157,7 @@ kbd {
   color: #dfe1ff;
   display: inline-flex;
   flex: 0 0 auto;
-  font-size: 13.5px;
+  font-size: 11.7px;
   font-weight: 700;
   height: 31px;
   justify-content: center;
@@ -1166,7 +1166,7 @@ kbd {
 }
 
 .avatar.small {
-  font-size: 11.25px;
+  font-size: 9.75px;
   height: 24px;
   width: 24px;
 }
@@ -1198,7 +1198,7 @@ kbd {
   border: 1px solid transparent;
   border-radius: 5px;
   display: inline-flex;
-  font-size: 12.75px;
+  font-size: 11.05px;
   font-weight: 550;
   gap: 5px;
   line-height: 19px;
@@ -1315,7 +1315,7 @@ kbd {
   border: 0;
   border-radius: 5px;
   color: var(--muted);
-  font-size: 15px;
+  font-size: 13px;
   height: 28px;
   padding: 0 9px;
 }
@@ -1347,7 +1347,7 @@ kbd {
   border: 0;
   color: var(--text);
   flex: 1;
-  font-size: 15.75px;
+  font-size: 13.65px;
   min-width: 0;
   outline: 0;
   padding: 0 6px;
@@ -1376,7 +1376,7 @@ kbd {
   border-bottom: 1px solid var(--border-soft);
   color: var(--text-2);
   display: grid;
-  font-size: 15px;
+  font-size: 13px;
   min-height: 54px;
   padding: 6px 13px;
   text-align: left;
@@ -1395,7 +1395,7 @@ button.table-row:hover {
 .table-head {
   background: #0c0e11;
   color: var(--faint);
-  font-size: 12.75px;
+  font-size: 11.05px;
   font-weight: 650;
   letter-spacing: 0.05em;
   min-height: 34px;
@@ -1436,7 +1436,7 @@ button.table-row:hover {
 
 .table-primary strong {
   color: var(--text);
-  font-size: 15.75px;
+  font-size: 13.65px;
   font-weight: 550;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1447,7 +1447,7 @@ button.table-row:hover {
 .table-row > span > small {
   color: var(--muted);
   display: block;
-  font-size: 13.2px;
+  font-size: 11.44px;
   font-weight: 400;
   margin-top: 2px;
   overflow: hidden;
@@ -1476,7 +1476,7 @@ button.table-row:hover {
   align-items: center;
   color: var(--muted);
   display: flex;
-  font-size: 14.25px;
+  font-size: 12.35px;
   justify-content: space-between;
   min-height: 48px;
   padding: 8px 13px;
@@ -1494,7 +1494,7 @@ button.table-row:hover {
   border-radius: 4px;
   color: var(--muted);
   display: flex;
-  font-size: 13.5px;
+  font-size: 11.7px;
   height: 24px;
   justify-content: center;
   min-width: 24px;
@@ -1553,11 +1553,11 @@ button.table-row:hover {
 
 .inventory-summary span {
   color: var(--muted);
-  font-size: 14.25px;
+  font-size: 12.35px;
 }
 
 .inventory-summary strong {
-  font-size: 25.5px;
+  font-size: 22.1px;
   font-variant-numeric: tabular-nums;
   grid-column: 3;
   grid-row: 1 / span 2;
@@ -1611,12 +1611,12 @@ button.table-row:hover {
 }
 
 .movement-action strong {
-  font-size: 16.5px;
+  font-size: 14.3px;
 }
 
 .movement-action small {
   color: var(--muted);
-  font-size: 13.5px;
+  font-size: 11.7px;
 }
 
 .movement-action > svg {
@@ -1632,17 +1632,17 @@ button.table-row:hover {
 
 .movement-total > span {
   color: var(--muted);
-  font-size: 14.25px;
+  font-size: 12.35px;
 }
 
 .movement-total > strong {
-  font-size: 27px;
+  font-size: 23.4px;
   letter-spacing: -0.02em;
 }
 
 .movement-total small {
   display: flex;
-  font-size: 12.75px;
+  font-size: 11.05px;
   gap: 10px;
 }
 
@@ -1686,12 +1686,12 @@ button.table-row:hover {
 }
 
 .score-explainer strong {
-  font-size: 16.5px;
+  font-size: 14.3px;
 }
 
 .score-explainer span {
   color: var(--muted);
-  font-size: 14.25px;
+  font-size: 12.35px;
 }
 
 .weight-pills {
@@ -1739,19 +1739,19 @@ button.table-row:hover {
 }
 
 .technician-card-top strong {
-  font-size: 16.5px;
+  font-size: 14.3px;
 }
 
 .technician-card-top span:not(.status-badge) {
   color: var(--muted);
-  font-size: 13.5px;
+  font-size: 11.7px;
 }
 
 .technician-role {
   align-items: center;
   color: var(--muted);
   display: flex;
-  font-size: 14.25px;
+  font-size: 12.35px;
   gap: 6px;
   margin: 13px 0;
 }
@@ -1776,7 +1776,7 @@ button.table-row:hover {
 .score-bar > span {
   color: var(--muted);
   display: flex;
-  font-size: 12px;
+  font-size: 10.4px;
   justify-content: space-between;
 }
 
@@ -1812,7 +1812,7 @@ button.table-row:hover {
   color: var(--muted);
   display: flex;
   flex-direction: column;
-  font-size: 12px;
+  font-size: 10.4px;
 }
 
 .technician-stats span:last-child {
@@ -1821,7 +1821,7 @@ button.table-row:hover {
 
 .technician-stats strong {
   color: var(--text);
-  font-size: 21px;
+  font-size: 18.2px;
 }
 
 .active-job {
@@ -1846,11 +1846,11 @@ button.table-row:hover {
 
 .active-job small {
   color: #9298e6;
-  font-size: 12px;
+  font-size: 10.4px;
 }
 
 .active-job strong {
-  font-size: 13.5px;
+  font-size: 11.7px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -1864,7 +1864,7 @@ button.table-row:hover {
   background: var(--success-soft);
   border-color: rgba(87, 211, 154, 0.13);
   color: var(--success);
-  font-size: 13.5px;
+  font-size: 11.7px;
   justify-content: center;
 }
 
@@ -1908,13 +1908,13 @@ button.table-row:hover {
 }
 
 .report-card h2 {
-  font-size: 18px;
+  font-size: 15.6px;
   margin: 15px 0 4px;
 }
 
 .report-card p {
   color: var(--muted);
-  font-size: 14.25px;
+  font-size: 12.35px;
   margin: 0;
   max-width: 90%;
 }
@@ -1922,7 +1922,7 @@ button.table-row:hover {
 .report-card > span {
   color: var(--text-2);
   display: block;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 600;
   margin-top: 13px;
 }
@@ -1943,7 +1943,7 @@ button.table-row:hover {
   color: var(--muted);
   display: flex;
   flex: 1;
-  font-size: 13.5px;
+  font-size: 11.7px;
   gap: 5px;
   justify-content: center;
   min-height: 35px;
@@ -2005,12 +2005,12 @@ button.table-row:hover {
 }
 
 .branch-column strong {
-  font-size: 14.25px;
+  font-size: 12.35px;
 }
 
 .branch-column span {
   color: var(--muted);
-  font-size: 12px;
+  font-size: 10.4px;
 }
 
 .chart-legend {
@@ -2024,7 +2024,7 @@ button.table-row:hover {
   align-items: center;
   color: var(--muted);
   display: flex;
-  font-size: 12.75px;
+  font-size: 11.05px;
   gap: 5px;
 }
 
@@ -2057,7 +2057,7 @@ button.table-row:hover {
   border-radius: 5px;
   color: var(--muted);
   display: flex;
-  font-size: 15px;
+  font-size: 13px;
   height: 32px;
   justify-content: space-between;
   padding: 0 9px;
@@ -2091,13 +2091,13 @@ button.table-row:hover {
 }
 
 .settings-heading h2 {
-  font-size: 21px;
+  font-size: 18.2px;
   margin: 0 0 4px;
 }
 
 .settings-heading p {
   color: var(--muted);
-  font-size: 15px;
+  font-size: 13px;
   margin: 0;
 }
 
@@ -2117,7 +2117,7 @@ button.table-row:hover {
   background: linear-gradient(145deg, #737aff, #5057c8);
   border-radius: 8px;
   display: flex;
-  font-size: 16.5px;
+  font-size: 14.3px;
   font-weight: 700;
   height: 40px;
   justify-content: center;
@@ -2131,12 +2131,12 @@ button.table-row:hover {
 }
 
 .logo-upload strong {
-  font-size: 15px;
+  font-size: 13px;
 }
 
 .logo-upload span {
   color: var(--muted);
-  font-size: 12.75px;
+  font-size: 11.05px;
 }
 
 .form-grid {
@@ -2159,7 +2159,7 @@ button.table-row:hover {
 
 .field > span {
   color: var(--text-2);
-  font-size: 14.25px;
+  font-size: 12.35px;
   font-weight: 520;
 }
 
@@ -2216,7 +2216,7 @@ button.table-row:hover {
 .input-suffix span {
   border-left: 1px solid var(--border);
   color: var(--muted);
-  font-size: 13.5px;
+  font-size: 11.7px;
   padding: 0 9px;
   white-space: nowrap;
 }
@@ -2243,7 +2243,7 @@ button.table-row:hover {
 
 .settings-save span {
   color: var(--faint);
-  font-size: 12.75px;
+  font-size: 11.05px;
   margin-right: auto;
 }
 
@@ -2273,12 +2273,12 @@ button.table-row:hover {
 }
 
 .reference-list strong {
-  font-size: 15px;
+  font-size: 13px;
 }
 
 .reference-list small {
   color: var(--muted);
-  font-size: 12.75px;
+  font-size: 11.05px;
 }
 
 .reference-list > div > svg {
@@ -2287,7 +2287,7 @@ button.table-row:hover {
 
 .drag-handle {
   color: var(--faint);
-  font-size: 18px;
+  font-size: 15.6px;
 }
 
 .weight-editor {
@@ -2308,7 +2308,7 @@ button.table-row:hover {
 }
 
 .weight-row > span {
-  font-size: 15px;
+  font-size: 13px;
 }
 
 .weight-row input[type="range"] {
@@ -2320,7 +2320,7 @@ button.table-row:hover {
 }
 
 .weight-total strong {
-  font-size: 21px;
+  font-size: 18.2px;
   text-align: right;
 }
 
@@ -2351,7 +2351,7 @@ button.table-row:hover {
   border-radius: 50%;
   color: #b8bcff;
   display: flex;
-  font-size: 13.5px;
+  font-size: 11.7px;
   height: 23px;
   justify-content: center;
   margin-right: 7px;
@@ -2359,7 +2359,7 @@ button.table-row:hover {
 }
 
 .workflow-row strong {
-  font-size: 14.25px;
+  font-size: 12.35px;
   font-weight: 550;
 }
 
@@ -2399,7 +2399,7 @@ button.table-row:hover {
 }
 
 .audit-event strong {
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 500;
 }
 
@@ -2413,12 +2413,12 @@ button.table-row:hover {
 
 .audit-event span {
   color: var(--muted);
-  font-size: 12.75px;
+  font-size: 11.05px;
 }
 
 .audit-event time {
   color: var(--muted);
-  font-size: 12.75px;
+  font-size: 11.05px;
   text-align: right;
 }
 
@@ -2481,7 +2481,7 @@ button.table-row:hover {
   align-items: center;
   color: var(--muted);
   display: flex;
-  font-size: 14.25px;
+  font-size: 12.35px;
   gap: 5px;
 }
 
@@ -2539,18 +2539,18 @@ button.table-row:hover {
 .record-title > div:last-child > div > span:first-child {
   color: var(--muted);
   font-family: var(--font-geist-mono), monospace;
-  font-size: 13.5px;
+  font-size: 11.7px;
 }
 
 .record-title h2 {
-  font-size: 27px;
+  font-size: 23.4px;
   letter-spacing: -0.02em;
   margin: 6px 0 2px;
 }
 
 .record-title p {
   color: var(--muted);
-  font-size: 15px;
+  font-size: 13px;
   margin: 0;
 }
 
@@ -2572,7 +2572,7 @@ button.table-row:hover {
   border: 0;
   border-bottom: 2px solid transparent;
   color: var(--muted);
-  font-size: 14.25px;
+  font-size: 12.35px;
   height: 36px;
   padding: 0 9px;
 }
@@ -2586,7 +2586,7 @@ button.table-row:hover {
   background: var(--surface-soft);
   border-radius: 4px;
   color: var(--muted);
-  font-size: 12px;
+  font-size: 10.4px;
   margin-left: 4px;
   padding: 1px 4px;
 }
@@ -2609,7 +2609,7 @@ button.table-row:hover {
 .metadata-panel h3,
 .record-section > h3 {
   color: var(--text-2);
-  font-size: 14.25px;
+  font-size: 12.35px;
   font-weight: 600;
   margin: 0 0 12px;
 }
@@ -2617,7 +2617,7 @@ button.table-row:hover {
 .meta-row {
   align-items: center;
   display: flex;
-  font-size: 13.5px;
+  font-size: 11.7px;
   gap: 8px;
   justify-content: space-between;
   margin: 10px 0;
@@ -2628,7 +2628,7 @@ button.table-row:hover {
 }
 
 .meta-row > strong {
-  font-size: 13.5px;
+  font-size: 11.7px;
   font-weight: 550;
   text-align: right;
 }
@@ -2657,12 +2657,12 @@ button.table-row:hover {
 }
 
 .assignee-card strong {
-  font-size: 13.5px;
+  font-size: 11.7px;
 }
 
 .assignee-card small {
   color: var(--muted);
-  font-size: 11.25px;
+  font-size: 9.75px;
 }
 
 .record-section {
@@ -2677,7 +2677,7 @@ button.table-row:hover {
 
 .description-copy {
   color: var(--text-2);
-  font-size: 15.75px;
+  font-size: 13.65px;
   line-height: 1.6;
   margin: 0;
 }
@@ -2690,7 +2690,7 @@ button.table-row:hover {
   align-items: center;
   color: var(--text-2);
   display: flex;
-  font-size: 14.25px;
+  font-size: 12.35px;
   gap: 8px;
   margin: 9px 0;
 }
@@ -2720,7 +2720,7 @@ button.table-row:hover {
   border: 0;
   color: var(--text);
   flex: 1;
-  font-size: 14.25px;
+  font-size: 12.35px;
   outline: 0;
 }
 
@@ -2767,18 +2767,18 @@ button.table-row:hover {
 }
 
 .timeline-event strong {
-  font-size: 14.25px;
+  font-size: 12.35px;
 }
 
 .timeline-event small {
   color: var(--muted);
-  font-size: 12.75px;
+  font-size: 11.05px;
   margin-top: 2px;
 }
 
 .timeline-event time {
   color: var(--faint);
-  font-size: 12px;
+  font-size: 10.4px;
   padding-top: 4px;
   text-align: right;
 }
@@ -2798,21 +2798,21 @@ button.table-row:hover {
 }
 
 .parts-list > div > span strong {
-  font-size: 14.25px;
+  font-size: 12.35px;
 }
 
 .parts-list > div > span small {
   color: var(--muted);
-  font-size: 12px;
+  font-size: 10.4px;
 }
 
 .parts-list > div > strong {
-  font-size: 14.25px;
+  font-size: 12.35px;
 }
 
 .parts-list footer {
   display: flex;
-  font-size: 15px;
+  font-size: 13px;
   justify-content: space-between;
   padding-top: 13px;
 }
@@ -2832,12 +2832,12 @@ button.table-row:hover {
 
 .audit-summary h3 {
   color: var(--text);
-  font-size: 16.5px;
+  font-size: 14.3px;
   margin: 12px 0 4px;
 }
 
 .audit-summary p {
-  font-size: 14.25px;
+  font-size: 12.35px;
   line-height: 1.6;
   margin: 0;
   max-width: 340px;
@@ -2871,16 +2871,16 @@ button.table-row:hover {
 .item-balance-card span,
 .item-balance-card small {
   color: var(--muted);
-  font-size: 12.75px;
+  font-size: 11.05px;
 }
 
 .item-balance-card strong {
-  font-size: 25.5px;
+  font-size: 22.1px;
   margin: 8px 0 4px;
 }
 
 .item-balance-card strong small {
-  font-size: 13.5px;
+  font-size: 11.7px;
   font-weight: 400;
 }
 
@@ -2898,7 +2898,7 @@ button.table-row:hover {
 
 .coverage-card > div:first-child {
   display: flex;
-  font-size: 13.5px;
+  font-size: 11.7px;
   justify-content: space-between;
 }
 
@@ -2931,7 +2931,7 @@ button.table-row:hover {
 
 .coverage-card p {
   color: var(--muted);
-  font-size: 12px;
+  font-size: 10.4px;
   margin: 0;
 }
 
@@ -2994,14 +2994,14 @@ button.table-row:hover {
 }
 
 .operation-modal h2 {
-  font-size: 22.5px;
+  font-size: 19.5px;
   letter-spacing: -0.015em;
   margin: 0 0 3px;
 }
 
 .operation-modal header p {
   color: var(--muted);
-  font-size: 14.25px;
+  font-size: 12.35px;
   margin: 0;
 }
 
@@ -3026,7 +3026,7 @@ button.table-row:hover {
   align-items: center;
   color: var(--faint);
   display: flex;
-  font-size: 12.75px;
+  font-size: 11.05px;
   gap: 5px;
   margin-right: auto;
 }
@@ -3051,12 +3051,12 @@ button.table-row:hover {
 
 .form-callout strong {
   color: #c5c8ff;
-  font-size: 14.25px;
+  font-size: 12.35px;
 }
 
 .form-callout span {
   color: #858ac8;
-  font-size: 12.75px;
+  font-size: 11.05px;
 }
 
 .form-callout.success {
@@ -3092,11 +3092,11 @@ button.table-row:hover {
 
 .stock-availability span {
   color: var(--muted);
-  font-size: 12px;
+  font-size: 10.4px;
 }
 
 .stock-availability strong {
-  font-size: 16.5px;
+  font-size: 14.3px;
 }
 
 .completion-job {
@@ -3110,12 +3110,12 @@ button.table-row:hover {
 }
 
 .completion-job strong {
-  font-size: 15px;
+  font-size: 13px;
 }
 
 .completion-job small {
   color: var(--muted);
-  font-size: 12.75px;
+  font-size: 11.05px;
 }
 
 .notifications-panel {
@@ -3141,13 +3141,13 @@ button.table-row:hover {
 }
 
 .notifications-panel h2 {
-  font-size: 18px;
+  font-size: 15.6px;
   margin: 0 0 2px;
 }
 
 .notifications-panel header span {
   color: var(--muted);
-  font-size: 12.75px;
+  font-size: 11.05px;
 }
 
 .notification-tabs {
@@ -3162,7 +3162,7 @@ button.table-row:hover {
   border: 0;
   border-bottom: 2px solid transparent;
   color: var(--muted);
-  font-size: 13.5px;
+  font-size: 11.7px;
   height: 34px;
   padding: 0 2px;
 }
@@ -3217,18 +3217,18 @@ button.table-row:hover {
 }
 
 .notification-list strong {
-  font-size: 14.25px;
+  font-size: 12.35px;
 }
 
 .notification-list small {
   color: var(--muted);
-  font-size: 12.75px;
+  font-size: 11.05px;
   margin: 2px 0 5px;
 }
 
 .notification-list em {
   color: var(--faint);
-  font-size: 11.25px;
+  font-size: 9.75px;
   font-style: normal;
 }
 
@@ -3242,7 +3242,7 @@ button.table-row:hover {
   background: transparent;
   border: 0;
   color: var(--muted);
-  font-size: 12.75px;
+  font-size: 11.05px;
   padding: 0;
 }
 
@@ -3285,7 +3285,7 @@ button.table-row:hover {
   border: 0;
   color: var(--text);
   flex: 1;
-  font-size: 18px;
+  font-size: 15.6px;
   outline: 0;
 }
 
@@ -3302,7 +3302,7 @@ button.table-row:hover {
 .command-results > span {
   color: var(--faint);
   display: block;
-  font-size: 12px;
+  font-size: 10.4px;
   font-weight: 650;
   letter-spacing: 0.06em;
   padding: 4px 8px 7px;
@@ -3331,7 +3331,7 @@ button.table-row:hover {
 .command-results strong {
   color: var(--text-2);
   flex: 1;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 520;
 }
 
@@ -3340,12 +3340,12 @@ button.table-row:hover {
 }
 
 .command-results span {
-  font-size: 12px;
+  font-size: 10.4px;
 }
 
 .command-results p {
   color: var(--muted);
-  font-size: 15px;
+  font-size: 13px;
   padding: 20px;
   text-align: center;
 }
@@ -3362,12 +3362,12 @@ button.table-row:hover {
   align-items: center;
   color: var(--faint);
   display: flex;
-  font-size: 12px;
+  font-size: 10.4px;
   gap: 3px;
 }
 
 .command-palette > footer kbd {
-  font-size: 12px;
+  font-size: 10.4px;
   line-height: 15px;
   min-width: 16px;
   padding: 0 3px;
@@ -3383,7 +3383,7 @@ button.table-row:hover {
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
   color: var(--text-2);
   display: flex;
-  font-size: 15px;
+  font-size: 13px;
   gap: 8px;
   left: 50%;
   padding: 10px 13px;
@@ -3427,12 +3427,12 @@ button.table-row:hover {
 
 .empty-state h3 {
   color: var(--text);
-  font-size: 16.5px;
+  font-size: 14.3px;
   margin: 12px 0 3px;
 }
 
 .empty-state p {
-  font-size: 13.5px;
+  font-size: 11.7px;
   margin: 0 0 12px;
 }
 
@@ -3455,12 +3455,12 @@ button.table-row:hover {
 }
 
 .workspace-loading strong {
-  font-size: 18px;
+  font-size: 15.6px;
 }
 
 .workspace-loading span {
   color: var(--muted);
-  font-size: 13.5px;
+  font-size: 11.7px;
 }
 
 .workspace-loading > svg {
@@ -3577,7 +3577,7 @@ button.table-row:hover {
 
 @media (max-width: 720px) {
   body {
-    font-size: 18px;
+    font-size: 15.6px;
   }
 
   .topbar {
@@ -3633,7 +3633,7 @@ button.table-row:hover {
   }
 
   .page-header h1 {
-    font-size: 28.5px;
+    font-size: 24.7px;
   }
 
   .header-actions {
@@ -3665,7 +3665,7 @@ button.table-row:hover {
   }
 
   .metric-card > strong {
-    font-size: 31.5px;
+    font-size: 27.3px;
   }
 
   .span-5,
@@ -3885,7 +3885,7 @@ button.table-row:hover {
     color: var(--muted);
     display: flex;
     flex-direction: column;
-    font-size: 12px;
+    font-size: 10.4px;
     gap: 3px;
     min-width: 50px;
   }
